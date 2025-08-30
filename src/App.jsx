@@ -53,20 +53,7 @@ export const App = () => {
               })}
               key={good}
             >
-              {selectedGood === '' ? (
-                <td>
-                  <button
-                    data-cy="AddButton"
-                    type="button"
-                    className="button"
-                    onClick={() => {
-                      handleSelect(good);
-                    }}
-                  >
-                    +
-                  </button>
-                </td>
-              ) : (
+              {selectedGood === good ? (
                 <td>
                   <button
                     data-cy="RemoveButton"
@@ -77,6 +64,19 @@ export const App = () => {
                     }}
                   >
                     -
+                  </button>
+                </td>
+              ) : (
+                <td>
+                  <button
+                    data-cy="AddButton"
+                    type="button"
+                    className="button"
+                    onClick={() => {
+                      handleSelect(good);
+                    }}
+                  >
+                    +
                   </button>
                 </td>
               )}
